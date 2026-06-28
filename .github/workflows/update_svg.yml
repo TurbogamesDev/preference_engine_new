@@ -44,4 +44,4 @@ jobs:
         git add -A
         
         git commit -m "(Automated) Update preference predictions"
-        git push
+        git push origin data-output
