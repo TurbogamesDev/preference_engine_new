@@ -13,8 +13,11 @@ jobs:
 
     steps:
     # Step 1: Download your repository code into the runner machine
-    - name: Checkout Repository
+    - name: Checkout code
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # This is critical: fetch the WHOLE history, not just the last commit
+        ref: main       # Ensure it explicitly checks out the main branch
 
     # Step 2: Boot up Python on the runner
     - name: Set up Python
@@ -38,12 +41,7 @@ jobs:
         git config --global user.name "github-actions[bot]"
         git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
         
-        git fetch origin
-        git reset --hard origin/main
-
-        git rm -r --cached .
-
-        git add output.svg
-
-        git commit --amend --no-edit
-        git push origin main --force
+        git add -A
+        
+        git commit -m "(Automated) Update preference predictions"
+        git push
