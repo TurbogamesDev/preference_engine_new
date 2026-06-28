@@ -41,7 +41,7 @@ jobs:
         git fetch origin
         git reset --hard origin/main
 
-        git add log_file.txt tag_score_log_file.txt output.svg
+        git add output.svg
 
         git commit --amend --no-edit
         git push origin main --force
