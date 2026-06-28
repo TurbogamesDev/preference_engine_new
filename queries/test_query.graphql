@@ -1,0 +1,30 @@
+query ($type: MediaType!, $userName: String!, $status_not: MediaListStatus) {
+  MediaListCollection(type: $type, userName: $userName, status_not: $status_not) {
+    lists {
+      name
+      entries {
+        media {
+          title {
+            english
+            romaji
+            native
+          }
+          episodes
+          duration
+          tags {
+            name
+            rank
+          }
+        }
+        progress
+        status
+        startedAt {
+          year
+          month
+          day
+        }
+        repeat
+      }
+    }
+  }
+}
