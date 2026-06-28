@@ -15,9 +15,6 @@ jobs:
     # Step 1: Download your repository code into the runner machine
     - name: Checkout code
       uses: actions/checkout@v4
-      with:
-        fetch-depth: 0  # This is critical: fetch the WHOLE history, not just the last commit
-        ref: main       # Ensure it explicitly checks out the main branch
 
     # Step 2: Boot up Python on the runner
     - name: Set up Python
