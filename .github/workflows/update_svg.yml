@@ -41,6 +41,8 @@ jobs:
         git fetch origin
         git reset --hard origin/main
 
+        git rm -r --cached .
+
         git add output.svg
 
         git commit --amend --no-edit
