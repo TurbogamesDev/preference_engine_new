@@ -22,14 +22,14 @@
 
   <rect class="bg" width="720" height="448" />
 
-  <text x="35" y="65" class="header">Anime Preference Predictor 19:31 04/07/26</text>
+  <text x="35" y="65" class="header">Anime Preference Predictor 19:54 04/07/26</text>
   <line x1="35" y1="85" x2="685" y2="85" class="line" />
 
   
   <g transform="translate(0, 0)">
     <text x="35" y="140" class="rank">#1</text>
     <text x="90" y="140" class="title">Mistress Kanan is Devilishly Easy</text>
-    <text x="685" y="140" class="score" text-anchor="end">86.06%</text>
+    <text x="685" y="140" class="score" text-anchor="end">87.83%</text>
     <line x1="35" y1="160" x2="685" y2="160" class="line" />
   </g>
 
