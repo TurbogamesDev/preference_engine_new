@@ -8,6 +8,7 @@ from zoneinfo import ZoneInfo
 import helpers.entry_fetcher as EntryFetcher
 import helpers.tag_scores_calculator as TagScoresCalculator
 import helpers.normalised_score_assigner as NormalisedScoreAssigner
+import helpers.output_handler as OutputHandler
 
 parsed_entries_response = EntryFetcher.fetch_parsed_entries_response("turbogames")
 
