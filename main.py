@@ -27,10 +27,10 @@ import helpers.tag_scores_calculator as TagScoresCalculator
 
 started_entries_dict, not_started_entries_dict = EntryFetcher.get_started_and_not_started_entries("turbogames")
 
-started_entries: list[Entry] = list(started_entries_dict.values())
-not_started_entries: list[Entry] = list(not_started_entries_dict.values())
+# started_entries: list[Entry] = list(started_entries_dict.values())
+# not_started_entries: list[Entry] = list(not_started_entries_dict.values())
 
-tag_scores: dict[str, TagScore] = {}
+# tag_scores: dict[str, TagScore] = {}
 started_entry_score_values: list[float] = []
 
 # for watch_list in response["MediaListCollection"]["lists"]: #[0]["entries"]:
@@ -42,19 +42,19 @@ started_entry_score_values: list[float] = []
 #         else:
 #             started_entries.append(entry)
 
-for entry in started_entries:
-    print(f"[{entry.status}] {entry.media.title} ({entry.progress}/{entry.media.total_episodes})")
+# for entry in started_entries:
+#     print(f"[{entry.status}] {entry.media.title} ({entry.progress}/{entry.media.total_episodes})")
 
-    for tag_data in entry.media.tags:
-        if tag_data.tag_name not in tag_scores:
-            tag_scores[tag_data.tag_name] = TagScore(tag_data.tag_name)
+#     for tag_data in entry.media.tags:
+#         if tag_data.tag_name not in tag_scores:
+#             tag_scores[tag_data.tag_name] = TagScore(tag_data.tag_name)
 
-        tag_scores[tag_data.tag_name].add_entry(entry, tag_data)
+#         tag_scores[tag_data.tag_name].add_entry(entry, tag_data)
     
-for entry in started_entries:
+for entry in list(started_entries_dict.values()):
     started_entry_score_values.append(entry_score_calc.calculate_raw_entry_score(entry, tag_scores))
 
-for entry in started_entries:
+for entry in list(started_entries_dict.values()):
     raw_entry_score = entry_score_calc.calculate_raw_entry_score(entry, tag_scores)
     normalised_entry_score = entry_score_calc.normalise_raw_entry_score(
         raw_entry_score,
@@ -72,7 +72,7 @@ for entry in started_entries:
 
 print("-"*80)
 
-for entry in not_started_entries:
+for entry in list(not_started_entries_dict.values()):
     raw_entry_score = entry_score_calc.calculate_raw_entry_score(entry, tag_scores)
     normalised_entry_score = entry_score_calc.normalise_raw_entry_score(
         raw_entry_score,
@@ -90,7 +90,7 @@ for entry in not_started_entries:
 
 table_data = [
     [f"#{i}", entry.media.title, f"{entry.normalised_score:.2f}%", entry.status]
-    for i, entry in enumerate(sorted(not_started_entries, key = lambda x: x.normalised_score, reverse = True), 1)
+    for i, entry in enumerate(sorted(list(not_started_entries_dict.values()), key = lambda x: x.normalised_score, reverse = True), 1)
 ]
 
 table_headers = ["Rank", "Anime Title", "Prediction", "Status"]
@@ -105,7 +105,7 @@ with open("output.svg", "w", encoding="utf-8") as file:
 
 table_data = [
     [f"#{i}", entry.media.title, f"{entry.normalised_score}", entry.status]
-    for i, entry in enumerate(sorted(started_entries + not_started_entries, key = lambda x: x.normalised_score, reverse = True), 1)
+    for i, entry in enumerate(sorted(list(started_entries_dict.values()) + list(not_started_entries_dict.values()), key = lambda x: x.normalised_score, reverse = True), 1)
 ]
 
 with open("log_file.txt", "a", encoding="utf-8") as file:
