@@ -8,7 +8,7 @@ def calculate_tag_scores(started_entries_dict: dict[int, Entry]) -> dict[int, Ta
         print(f"[{entry.status}] {entry.media.title} ({entry.progress}/{entry.media.total_episodes})")
 
         for tag_data in entry.media.tags:
-            if tag_data.tag_name not in tag_scores:
+            if not tag_scores.get(tag_data.tag_id):
                 tag_scores[tag_data.tag_id] = TagScore(tag_data.tag_id, tag_data.tag_name)
 
             tag_scores[tag_data.tag_id].add_entry(entry, tag_data)

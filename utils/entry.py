@@ -22,7 +22,7 @@ class Entry:
 
         self.runtime_hours_weight: float = fixed_watched_runtime_hours_for_dropped if self.status == "DROPPED" else (self.media.episode_duration_hours * self.progress)
 
-        self.normalised_score: float = 0.0
+        # self.normalised_score: float = 0.0
 
         if self.progress > self.media.total_episodes:
             self.media.total_episodes = self.progress
