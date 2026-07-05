@@ -1,16 +1,16 @@
 from utils.entry import Entry
 from utils.tag_score import TagScore
 
-def calculate_raw_entry_score(entry: Entry, tag_scores: dict[str, TagScore]) -> float:
+def calculate_raw_entry_score(entry: Entry, tag_scores: dict[int, TagScore]) -> float:
     final_score: float = 0.0
 
     for tag_data in entry.media.tags:
-        tag_name = tag_data.tag_name
+        tag_id = tag_data.tag_id
 
-        if tag_name not in tag_scores:
+        if not tag_scores.get(tag_id):
             continue
 
-        final_score += (tag_data.tag_weight * tag_scores[tag_name].total_tag_score)
+        final_score += (tag_data.tag_weight * tag_scores[tag_id].total_tag_score)
 
     return final_score
 

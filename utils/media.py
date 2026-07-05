@@ -18,6 +18,6 @@ class Media:
 
         for raw_tag_data in raw_media["tags"]:
             self.tags.append(
-                TagData(raw_tag_data["name"], raw_tag_data["rank"])
+                TagData(raw_tag_data["id"], raw_tag_data["name"], raw_tag_data["rank"])
             )
         
