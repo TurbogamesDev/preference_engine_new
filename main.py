@@ -9,10 +9,13 @@ import helpers.entry_fetcher as EntryFetcher
 import helpers.tag_scores_calculator as TagScoresCalculator
 import helpers.normalised_score_assigner as NormalisedScoreAssigner
 
-started_entries, not_started_medias = EntryFetcher.get_started_and_not_started_entries("turbogames")
+parsed_entries_response = EntryFetcher.fetch_parsed_entries_response("turbogames")
+
+started_entries = parsed_entries_response.started_entries
+not_started_medias = parsed_entries_response.not_started_media
+media_to_watch_status = parsed_entries_response.media_to_watch_status
 
 tag_scores: dict[int, TagScore] = TagScoresCalculator.calculate_tag_scores(started_entries)
-# started_entries_raw_scores: list[float] = []
 
 media_to_normalised_score: dict[int, float] = NormalisedScoreAssigner.calculate_media_to_normalised_score_dict(started_entries, not_started_medias, tag_scores)
     
