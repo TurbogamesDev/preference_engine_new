@@ -8,7 +8,7 @@ class Media:
 
         self.total_episodes: int = raw_media["episodes"] or fallback_total_episodes
 
-        self.episode_duration_hours: float = (raw_media["duration"] or 24)  / 60.0
+        self.episode_duration_hours: float = (raw_media["duration"] or 24) / 60.0
 
         self.total_runlength_hours: float = self.total_episodes * self.episode_duration_hours
 

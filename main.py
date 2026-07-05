@@ -10,6 +10,8 @@ import utils.table_to_svg as table_to_svg
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
+import helpers.entry_fetcher as EntryFetcher
+
 test_query_file_path = "queries/test_query.graphql"
 
 test_query = graphql_interface.get_query_from_file_path(test_query_file_path)
