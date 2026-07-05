@@ -12,32 +12,32 @@ from zoneinfo import ZoneInfo
 
 import helpers.entry_fetcher as EntryFetcher
 
-test_query_file_path = "queries/test_query.graphql"
+# test_query_file_path = "queries/test_query.graphql"
 
-test_query = graphql_interface.get_query_from_file_path(test_query_file_path)
+# test_query = graphql_interface.get_query_from_file_path(test_query_file_path)
 
-response = graphql_interface.run_anilist_query(
-    test_query,
-    {
-        "type": "ANIME",
-        "userName": "turbogames"
-    }
-)
+# response = graphql_interface.run_anilist_query(
+#     test_query,
+#     {
+#         "type": "ANIME",
+#         "userName": "turbogames"
+#     }
+# )
 
-started_entries: list[Entry] = []
+started_entries, not_started_entries = EntryFetcher.get_started_and_not_started_entries("turbogames")
 not_started_entries: list[Entry] = []
 
 tag_scores: dict[str, TagScore] = {}
 started_entry_score_values: list[float] = []
 
-for watch_list in response["MediaListCollection"]["lists"]: #[0]["entries"]:
-    for raw_entry in watch_list["entries"]:
-        entry: Entry = Entry(raw_entry)
+# for watch_list in response["MediaListCollection"]["lists"]: #[0]["entries"]:
+#     for raw_entry in watch_list["entries"]:
+#         entry: Entry = Entry(raw_entry)
 
-        if entry.status == "PLANNING":
-            not_started_entries.append(entry)
-        else:
-            started_entries.append(entry)
+#         if entry.status == "PLANNING":
+#             not_started_entries.append(entry)
+#         else:
+#             started_entries.append(entry)
 
 for entry in started_entries:
     print(f"[{entry.status}] {entry.media.title} ({entry.progress}/{entry.media.total_episodes})")
