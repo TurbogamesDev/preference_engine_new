@@ -24,8 +24,10 @@ import helpers.entry_fetcher as EntryFetcher
 #     }
 # )
 
-started_entries, not_started_entries = EntryFetcher.get_started_and_not_started_entries("turbogames")
-not_started_entries: list[Entry] = []
+started_entries_dict, not_started_entries_dict = EntryFetcher.get_started_and_not_started_entries("turbogames")
+
+started_entries: list[Entry] = list(started_entries_dict.values())
+not_started_entries: list[Entry] = list(not_started_entries_dict.values())
 
 tag_scores: dict[str, TagScore] = {}
 started_entry_score_values: list[float] = []
