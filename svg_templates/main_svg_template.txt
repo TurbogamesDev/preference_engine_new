@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 448" preserveAspectRatio="xMidYMid meet" style="width: 100%; height: auto; max-width: 720px;">
+  <defs>
+    <linearGradient id="boxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1622" />
+      <stop offset="100%" stop-color="#112233" />
+    </linearGradient>
+
+    <clipPath id="titleClip">
+      <rect x="90" y="0" width="510" height="100%" />
+    </clipPath>
+  </defs>
+
+  <style>
+    .bg {{ fill: url(#boxGrad); rx: 20px; }}
+    .header {{ font-family: 'Overpass', 'Inter', system-ui, sans-serif; font-weight: 800; font-size: 28px; fill: #edf1f5; }}
+    .rank {{ font-family: 'Overpass', 'Inter', system-ui, sans-serif; font-weight: 700; font-size: 22px; fill: #e5933a; }}
+    .title {{ font-family: 'Overpass', 'Inter', system-ui, sans-serif; font-weight: 600; font-size: 22px; fill: #9fadbd; }}
+    .score {{ font-family: 'Overpass', 'Inter', system-ui, sans-serif; font-weight: 700; font-size: 22px; fill: #3db4f2; }}
+    .line {{ stroke: #152232; stroke-width: 2; stroke-linecap: round; }}
+  </style>
+
+  <rect class="bg" width="720" height="448" />
+
+  <text x="35" y="65" class="header">Anime Preference Predictor {TIMESTAMP}</text>
+  <line x1="35" y1="85" x2="685" y2="85" class="line" />
+
+  {ROWS}
+</svg>

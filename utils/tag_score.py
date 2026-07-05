@@ -6,7 +6,9 @@ from datetime import datetime, timezone
 tag_weight_exponent = 1.5
 
 class TagScore:
-    def __init__(self, tag_name: str) -> None:
+    def __init__(self, tag_id: int, tag_name: str) -> None:
+        self.tag_id: int = tag_id
+
         self.tag_name: str = tag_name
 
         self.total_tag_score: float = 0.0
