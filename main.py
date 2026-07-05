@@ -1,7 +1,7 @@
 from utils.tag_score import TagScore
 
 from tabulate import tabulate
-import utils.table_to_svg as table_to_svg
+import helpers.table_to_svg as table_to_svg
 from datetime import datetime
 from zoneinfo import ZoneInfo
 

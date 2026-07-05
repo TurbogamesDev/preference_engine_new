@@ -4,7 +4,7 @@ from utils.entry import Entry
 from utils.media import Media
 from utils.tag_score import TagScore
 
-import utils.entry_score_calculator as EntryScoreCalculator
+import helpers.entry_score_calculator as EntryScoreCalculator
 
 def calculate_normalised_score_for_media(media: Media, tag_scores: dict[int, TagScore], started_entries_raw_scores: list[float]) -> float:
     raw_entry_score: float = EntryScoreCalculator.calculate_raw_media_score(media, tag_scores)
