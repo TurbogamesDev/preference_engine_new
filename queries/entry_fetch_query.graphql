@@ -13,6 +13,7 @@ query ($type: MediaType!, $userName: String!, $status_not: MediaListStatus) {
           episodes
           duration
           tags {
+            id
             name
             rank
           }
