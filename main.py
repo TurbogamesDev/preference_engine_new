@@ -11,6 +11,7 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 
 import helpers.entry_fetcher as EntryFetcher
+import helpers.tag_scores_calculator as TagScoresCalculator
 
 # test_query_file_path = "queries/test_query.graphql"
 
