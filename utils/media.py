@@ -4,6 +4,8 @@ fallback_total_episodes = 12
 
 class Media:
     def __init__(self, raw_media: dict) -> None:
+        self.id: int = raw_media["id"]
+
         self.title: str = raw_media["title"]["english"] or raw_media["title"]["romaji"] or raw_media["title"]["native"] or "Unknown Title"
 
         self.total_episodes: int = raw_media["episodes"] or fallback_total_episodes

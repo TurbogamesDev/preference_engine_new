@@ -4,6 +4,7 @@ query ($type: MediaType!, $userName: String!, $status_not: MediaListStatus) {
       name
       entries {
         media {
+          id
           title {
             english
             romaji
