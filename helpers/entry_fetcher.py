@@ -23,6 +23,9 @@ def get_started_and_not_started_entries(username: str) -> tuple[dict[int, Entry]
         for raw_entry in watch_list["entries"]:
             entry: Entry = Entry(raw_entry)
 
+            if len(entry.media.tags) == 0:
+                continue
+
             if entry.status == "PLANNING":
                 if not_started_entries.get(entry.media.id):
                     continue
