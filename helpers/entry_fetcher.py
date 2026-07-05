@@ -3,13 +3,13 @@ import utils.graphql_interface as graphql_interface
 from utils.entry import Entry
 from utils.tag_score import TagScore
 
-test_query_file_path = "queries/test_query.graphql"
+entry_fetch_query_file_path = "queries/entry_fetch_query.graphql"
 
-test_query = graphql_interface.get_query_from_file_path(test_query_file_path)
+entry_fetch_query = graphql_interface.get_query_from_file_path(entry_fetch_query_file_path)
 
 def get_started_and_not_started_entries(username: str) -> tuple[dict[int, Entry], dict[int, Entry]]:
     response = graphql_interface.run_anilist_query(
-        test_query,
+        entry_fetch_query,
         {
             "type": "ANIME",
             "userName": username
