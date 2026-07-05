@@ -30,7 +30,7 @@ started_entries_dict, not_started_entries_dict = EntryFetcher.get_started_and_no
 # started_entries: list[Entry] = list(started_entries_dict.values())
 # not_started_entries: list[Entry] = list(not_started_entries_dict.values())
 
-# tag_scores: dict[str, TagScore] = {}
+tag_scores: dict[int, TagScore] = TagScoresCalculator.calculate_tag_scores(started_entries_dict)
 started_entry_score_values: list[float] = []
 
 # for watch_list in response["MediaListCollection"]["lists"]: #[0]["entries"]:
