@@ -1,10 +1,3 @@
-from utils.tag_score import TagScore
-
-from tabulate import tabulate
-import helpers.table_to_svg as table_to_svg
-from datetime import datetime
-from zoneinfo import ZoneInfo
-
 import helpers.entry_fetcher as EntryFetcher
 import helpers.tag_scores_calculator as TagScoresCalculator
 import helpers.normalised_score_assigner as NormalisedScoreAssigner
@@ -12,14 +5,30 @@ import helpers.output_handler as OutputHandler
 
 parsed_entries_response = EntryFetcher.fetch_parsed_entries_response("turbogames")
 
+if parsed_entries_response:
+    print("Successfully retrieved entries from AniList!")
+
 started_entries = parsed_entries_response.started_entries
 not_started_medias = parsed_entries_response.not_started_media
 media_to_watch_status = parsed_entries_response.media_to_watch_status
 
-tag_scores: dict[int, TagScore] = TagScoresCalculator.calculate_tag_scores(started_entries)
+tag_scores = TagScoresCalculator.calculate_tag_scores(started_entries)
 
-media_to_normalised_score: dict[int, float] = NormalisedScoreAssigner.calculate_media_to_normalised_score_dict(started_entries, not_started_medias, tag_scores)
-    
+print("Calculated raw tag_scores.")
+
+media_to_normalised_score = NormalisedScoreAssigner.calculate_media_to_normalised_score_dict(started_entries, not_started_medias, tag_scores)
+
+print("Calculated normalised scored for anime.")
+
+OutputHandler.generate_output_svg(media_to_normalised_score, not_started_medias)
+
+print("Successfully generated output SVG!")
+
+OutputHandler.append_log_file(media_to_normalised_score, parsed_entries_response)
+OutputHandler.append_tag_score_log_file(tag_scores)
+
+print("Successfully appended log files!")
+
 # for entry in list(started_entries.values()):
 #     started_entries_raw_scores.append(entry_score_calc.calculate_raw_media_score(entry.media, tag_scores))
 
@@ -49,56 +58,51 @@ media_to_normalised_score: dict[int, float] = NormalisedScoreAssigner.calculate_
 
 #     print(f"{media.title} is predicted to have a score of {normalised_entry_score:.2f}%") 
 
-table_data = [
-    [f"#{i}", media.title, f"{media_to_normalised_score[media.id]:.2f}%", "PLANNING"]
-    for i, media in enumerate(sorted(list(not_started_medias.values()), key = lambda media: media_to_normalised_score[media.id], reverse = True), 1)
-]
+# table_data = [
+#     [f"#{i}", media.title, f"{media_to_normalised_score[media.id]:.2f}%", "PLANNING"]
+#     for i, media in enumerate(sorted(list(not_started_medias.values()), key = lambda media: media_to_normalised_score[media.id], reverse = True), 1)
+# ]
 
-table_headers = ["Rank", "Anime Title", "Prediction", "Status"]
+# table_headers = ["Rank", "Anime Title", "Prediction", "Status"]
 
-with open("output.svg", "w", encoding="utf-8") as file:
-    file.write(table_to_svg.convert_table_to_svg(table_data))
+# with open("output.svg", "w", encoding="utf-8") as file:
+#     file.write(table_to_svg.convert_table_to_svg(table_data))
 
-# table_data.extend([
-#     [f"#{i}", entry.media.title, f"{entry.normalised_score:.2f}%", entry.status]
-#     for i, entry in enumerate(sorted(started_entries, key = lambda x: x.normalised_score, reverse = True), 1)
-# ])
+# table_data = [
+#     [f"#{i}", media.title, f"{media_to_normalised_score[media.id]}", media_to_watch_status[media.id]]
+#     for i, media in enumerate(sorted([entry.media for entry in list(started_entries.values())] + list(not_started_medias.values()), key = lambda media: media_to_normalised_score[media.id], reverse = True), 1)
+# ]
 
-table_data = [
-    [f"#{i}", media.title, f"{media_to_normalised_score[media.id]}", media_to_watch_status[media.id]]
-    for i, media in enumerate(sorted([entry.media for entry in list(started_entries.values())] + list(not_started_medias.values()), key = lambda media: media_to_normalised_score[media.id], reverse = True), 1)
-]
+# with open("log_file.txt", "a", encoding="utf-8") as file:
+#     file.write(f"Log file for {datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%H:%M:%S %d/%m/%y")}:\n")
 
-with open("log_file.txt", "a", encoding="utf-8") as file:
-    file.write(f"Log file for {datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%H:%M:%S %d/%m/%y")}:\n")
+#     file.write(
+#         tabulate(table_data, table_headers)
+#     )
 
-    file.write(
-        tabulate(table_data, table_headers)
-    )
+#     file.write("\n")
 
-    file.write("\n")
+#     file.write("*" * 120)
 
-    file.write("*" * 120)
+#     file.write("\n")
 
-    file.write("\n")
+# with open("tag_score_log_file.txt", "a", encoding="utf-8") as file:
+#     file.write(f"Log file for {datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%H:%M:%S %d/%m/%y")}:\n")
 
-with open("tag_score_log_file.txt", "a", encoding="utf-8") as file:
-    file.write(f"Log file for {datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%H:%M:%S %d/%m/%y")}:\n")
+#     file.write(
+#         tabulate(
+#             [
+#                 [f"#{i}", tag_score.tag_name, tag_score.total_tag_score]
+#                 for i, tag_score in enumerate(sorted(tag_scores.values(), key = lambda x: x.total_tag_score, reverse = True), 1)
+#             ],
+#         )
+#     )
 
-    file.write(
-        tabulate(
-            [
-                [f"#{i}", tag_score.tag_name, tag_score.total_tag_score]
-                for i, tag_score in enumerate(sorted(tag_scores.values(), key = lambda x: x.total_tag_score, reverse = True), 1)
-            ],
-        )
-    )
+#     file.write("\n")
 
-    file.write("\n")
+#     file.write("*" * 120)
 
-    file.write("*" * 120)
-
-    file.write("\n")
+#     file.write("\n")
 
 
 
