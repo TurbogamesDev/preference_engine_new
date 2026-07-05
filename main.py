@@ -63,10 +63,10 @@ with open("output.svg", "w", encoding="utf-8") as file:
 #     for i, entry in enumerate(sorted(started_entries, key = lambda x: x.normalised_score, reverse = True), 1)
 # ])
 
-# table_data += [
-#     [f"#{i}", entry.media.title, f"{entry.normalised_score}"]
-#     for i, entry in enumerate(sorted(list(started_entries.values()), key = lambda x: x.normalised_score, reverse = True), 1)
-# ]
+table_data = [
+    [f"#{i}", media.title, f"{media_to_normalised_score[media.id]}", media_to_watch_status[media.id]]
+    for i, media in enumerate(sorted([entry.media for entry in list(started_entries.values())] + list(not_started_medias.values()), key = lambda media: media_to_normalised_score[media.id], reverse = True), 1)
+]
 
 with open("log_file.txt", "a", encoding="utf-8") as file:
     file.write(f"Log file for {datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%H:%M:%S %d/%m/%y")}:\n")
