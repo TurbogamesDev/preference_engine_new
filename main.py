@@ -25,13 +25,15 @@ import helpers.tag_scores_calculator as TagScoresCalculator
 #     }
 # )
 
-started_entries_dict, not_started_entries_dict = EntryFetcher.get_started_and_not_started_entries("turbogames")
+started_entries, not_started_medias = EntryFetcher.get_started_and_not_started_entries("turbogames")
 
 # started_entries: list[Entry] = list(started_entries_dict.values())
 # not_started_entries: list[Entry] = list(not_started_entries_dict.values())
 
-tag_scores: dict[int, TagScore] = TagScoresCalculator.calculate_tag_scores(started_entries_dict)
+tag_scores: dict[int, TagScore] = TagScoresCalculator.calculate_tag_scores(started_entries)
 started_entry_score_values: list[float] = []
+
+media_to_normalised_score: dict[int, float] = {}
 
 # for watch_list in response["MediaListCollection"]["lists"]: #[0]["entries"]:
 #     for raw_entry in watch_list["entries"]:
@@ -51,12 +53,12 @@ started_entry_score_values: list[float] = []
 
 #         tag_scores[tag_data.tag_name].add_entry(entry, tag_data)
     
-for entry in list(started_entries_dict.values()):
-    started_entry_score_values.append(entry_score_calc.calculate_raw_entry_score(entry, tag_scores))
+for entry in list(started_entries.values()):
+    started_entry_score_values.append(entry_score_calc.calculate_raw_media_score(entry.media, tag_scores))
 
-for entry in list(started_entries_dict.values()):
-    raw_entry_score = entry_score_calc.calculate_raw_entry_score(entry, tag_scores)
-    normalised_entry_score = entry_score_calc.normalise_raw_entry_score(
+for entry in list(started_entries.values()):
+    raw_entry_score = entry_score_calc.calculate_raw_media_score(entry.media, tag_scores)
+    normalised_entry_score = entry_score_calc.normalise_raw_media_score(
         raw_entry_score,
         max(started_entry_score_values),
         statistics.median(started_entry_score_values)
@@ -72,25 +74,25 @@ for entry in list(started_entries_dict.values()):
 
 print("-"*80)
 
-for entry in list(not_started_entries_dict.values()):
-    raw_entry_score = entry_score_calc.calculate_raw_entry_score(entry, tag_scores)
-    normalised_entry_score = entry_score_calc.normalise_raw_entry_score(
+for media in list(not_started_medias.values()):
+    raw_entry_score = entry_score_calc.calculate_raw_media_score(media, tag_scores)
+    normalised_entry_score = entry_score_calc.normalise_raw_media_score(
         raw_entry_score,
         max(started_entry_score_values),
         statistics.median(started_entry_score_values)
     )
 
-    entry.normalised_score = normalised_entry_score
+    media_to_normalised_score[media.id] = normalised_entry_score
 
     # table_data.append([entry.media.title, f"{normalised_entry_score:.2f}%"])
 
     # print(f"This should be 100%: {entry_score_calc.normalise_raw_entry_score(max(started_entry_score_values), max(tag_score_values), statistics.median(tag_score_values))}%")
     # print(f"This should be 50%: {entry_score_calc.normalise_raw_entry_score(max(tag_score_values), max(tag_score_values), statistics.median(tag_score_values))}%")
-    print(f"{entry.media.title} is predicted to have a score of {normalised_entry_score:.2f}%") 
+    print(f"{media.title} is predicted to have a score of {normalised_entry_score:.2f}%") 
 
 table_data = [
-    [f"#{i}", entry.media.title, f"{entry.normalised_score:.2f}%", entry.status]
-    for i, entry in enumerate(sorted(list(not_started_entries_dict.values()), key = lambda x: x.normalised_score, reverse = True), 1)
+    [f"#{i}", media.title, f"{entry.normalised_score:.2f}%", "PLANNING"]
+    for i, media in enumerate(sorted(list(not_started_medias.values()), key = lambda media: media_to_normalised_score[media.id], reverse = True), 1)
 ]
 
 table_headers = ["Rank", "Anime Title", "Prediction", "Status"]
@@ -103,9 +105,9 @@ with open("output.svg", "w", encoding="utf-8") as file:
 #     for i, entry in enumerate(sorted(started_entries, key = lambda x: x.normalised_score, reverse = True), 1)
 # ])
 
-table_data = [
-    [f"#{i}", entry.media.title, f"{entry.normalised_score}", entry.status]
-    for i, entry in enumerate(sorted(list(started_entries_dict.values()) + list(not_started_entries_dict.values()), key = lambda x: x.normalised_score, reverse = True), 1)
+table_data += [
+    [f"#{i}", entry.media.title, f"{entry.normalised_score}"]
+    for i, entry in enumerate(sorted(list(started_entries.values()), key = lambda x: x.normalised_score, reverse = True), 1)
 ]
 
 with open("log_file.txt", "a", encoding="utf-8") as file:

@@ -7,12 +7,12 @@ fixed_watched_runtime_hours_for_dropped = 4.73
 decay_speed = 300
 
 class Entry:
-    def __init__(self, raw_entry: dict) -> None:
-        self.media: Media = Media(raw_entry["media"])
+    def __init__(self, raw_entry: dict, media: Media) -> None:
+        self.media: Media = media
 
         self.progress: int = raw_entry["progress"]
         self.status: str = raw_entry["status"]
-        self.start_date: datetime = datetime.now() if self.status == "PLANNING" else datetime(
+        self.start_date = datetime(
             raw_entry["startedAt"]["year"] or 1,
             raw_entry["startedAt"]["month"] or 1,
             raw_entry["startedAt"]["day"] or 1,

@@ -1,10 +1,10 @@
-from utils.entry import Entry
+from utils.media import Media
 from utils.tag_score import TagScore
 
-def calculate_raw_entry_score(entry: Entry, tag_scores: dict[int, TagScore]) -> float:
+def calculate_raw_media_score(media: Media, tag_scores: dict[int, TagScore]) -> float:
     final_score: float = 0.0
 
-    for tag_data in entry.media.tags:
+    for tag_data in media.tags:
         tag_id = tag_data.tag_id
 
         if not tag_scores.get(tag_id):
@@ -14,7 +14,7 @@ def calculate_raw_entry_score(entry: Entry, tag_scores: dict[int, TagScore]) -> 
 
     return final_score
 
-def normalise_raw_entry_score(raw_entry_score: float, highest_entry_score: float, median_entry_score: float) -> float:
+def normalise_raw_media_score(raw_entry_score: float, highest_entry_score: float, median_entry_score: float) -> float:
     # y = mx + c
     
     slope: float = 50 / (highest_entry_score - median_entry_score)
