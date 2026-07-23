@@ -21,33 +21,33 @@
 
   <rect class="bg" width="720" height="448" />
 
-  <text x="35" y="65" class="header">Anime Preference Predictor 22:15 22/07/26</text>
+  <text x="35" y="65" class="header">Anime Preference Predictor 14:31 23/07/26</text>
   <line x1="35" y1="85" x2="685" y2="85" class="line" />
 
   <g transform="translate(0, 0)">
   <text x="35" y="140" class="rank">#1</text>
   <text x="90" y="140" class="title">Komi Can’t Communicate</text>
-  <text x="685" y="140" class="score" text-anchor="end">73.73%</text>
+  <text x="685" y="140" class="score" text-anchor="end">73.94%</text>
   <line x1="35" y1="160" x2="685" y2="160" class="line" />
 </g><g transform="translate(0, 65)">
   <text x="35" y="140" class="rank">#2</text>
   <text x="90" y="140" class="title">OSHI NO KO</text>
-  <text x="685" y="140" class="score" text-anchor="end">70.16%</text>
+  <text x="685" y="140" class="score" text-anchor="end">70.18%</text>
   <line x1="35" y1="160" x2="685" y2="160" class="line" />
 </g><g transform="translate(0, 130)">
   <text x="35" y="140" class="rank">#3</text>
   <text x="90" y="140" class="title">The Angel Next Door Spoils Me Rotten2</text>
-  <text x="685" y="140" class="score" text-anchor="end">63.23%</text>
+  <text x="685" y="140" class="score" text-anchor="end">63.43%</text>
   <line x1="35" y1="160" x2="685" y2="160" class="line" />
 </g><g transform="translate(0, 195)">
   <text x="35" y="140" class="rank">#4</text>
   <text x="90" y="140" class="title">Makeine: Too Many Losing Heroines!</text>
-  <text x="685" y="140" class="score" text-anchor="end">63.07%</text>
+  <text x="685" y="140" class="score" text-anchor="end">63.27%</text>
   <line x1="35" y1="160" x2="685" y2="160" class="line" />
 </g><g transform="translate(0, 260)">
   <text x="35" y="140" class="rank">#5</text>
   <text x="90" y="140" class="title">Eromanga Sensei</text>
-  <text x="685" y="140" class="score" text-anchor="end">63.00%</text>
+  <text x="685" y="140" class="score" text-anchor="end">63.20%</text>
   <line x1="35" y1="160" x2="685" y2="160" class="line" />
 </g>
 </svg>
