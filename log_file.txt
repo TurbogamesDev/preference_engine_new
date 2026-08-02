@@ -121154,3 +121154,116 @@ Rank      Anime ID  Anime Title                                                 
 #108        170913  Adam's Sweet Agony                                                                                     8.39759  DROPPED
 #109        207327  To You in the Beyond                                                                                   4.73246  PLANNING
 ************************************************************************************************************************
+Log file for 12:30:55 02/08/26:
+Rank      Anime ID  Anime Title                                                                                         Prediction  Status
+------  ----------  ------------------------------------------------------------------------------------------------  ------------  ---------
+#1           21776  Miss Kobayashi's Dragon Maid                                                                         100        COMPLETED
+#2          107717  Miss Kobayashi's Dragon Maid S                                                                        97.0629   COMPLETED
+#3           13759  The Pet Girl of Sakurasou                                                                             95.7391   COMPLETED
+#4          150672  OSHI NO KO                                                                                            94.3045   COMPLETED
+#5          186190  Alma-chan Wants to Be a Family!                                                                       88.8898   COMPLETED
+#6          106286  Weathering With You                                                                                   87.6985   COMPLETED
+#7          147864  ONIMAI: I'm Now Your Sister!                                                                          80.2361   COMPLETED
+#8          169580  I Made Friends with the Second Prettiest Girl in My Class                                             72.9315   COMPLETED
+#9          201903  Cosmic Princess Kaguya!                                                                               72.7195   COMPLETED
+#10         133965  Komi Can’t Communicate                                                                                71.0704   PLANNING
+#11         116267  TONIKAWA: Over The Moon For You                                                                       69.4368   COMPLETED
+#12         141391  Call of the Night                                                                                     69.4055   DROPPED
+#13         181839  Miss Kobayashi's Dragon Maid: A lonely dragon wants to be loved                                       69.1764   COMPLETED
+#14         194393  I Want to End this Love Game                                                                          68.9976   COMPLETED
+#15          21878  Gabriel DropOut                                                                                       68.732    COMPLETED
+#16         184951  You and I Are Polar Opposites                                                                         68.6082   DROPPED
+#17         162804  Alya Sometimes Hides Her Feelings in Russian                                                          67.9611   COMPLETED
+#18         172439  Welcome to Japan, Ms. Elf!                                                                            67.6797   COMPLETED
+#19         204466  KAIJU GIRL CARAMELISE                                                                                 66.2595   CURRENT
+#20         166531  OSHI NO KO Season 2                                                                                   65.3046   CURRENT
+#21         168138  Grandpa and Grandma Turn Young Again                                                                  63.2699   PLANNING
+#22          11887  Kokoro Connect                                                                                        62.6775   PLANNING
+#23         171457  Makeine: Too Many Losing Heroines!                                                                    62.2618   PLANNING
+#24           4224  Toradora!                                                                                             61.9587   PLANNING
+#25         170019  The Angel Next Door Spoils Me Rotten2                                                                 61.8259   PLANNING
+#26         143338  The Angel Next Door Spoils Me Rotten                                                                  61.1805   COMPLETED
+#27          21685  Eromanga Sensei                                                                                       61.0283   PLANNING
+#28         190704  Mistress Kanan is Devilishly Easy                                                                     60.6638   DROPPED
+#29          21290  And you thought there is never a girl online?                                                         60.5046   COMPLETED
+#30         195734  Ichijyoma Mankitsu Gurashi!                                                                           60.3596   PAUSED
+#31         101291  Rascal Does Not Dream of Bunny Girl Senpai                                                            59.9529   DROPPED
+#32         105932  O Maidens in Your Savage Season                                                                       58.8692   PLANNING
+#33          14741  Love, Chunibyo & Other Delusions                                                                      58.2833   PLANNING
+#34         120697  DON'T TOY WITH ME, MISS NAGATORO                                                                      58.2431   PLANNING
+#35         105914  The Helpful Fox Senko-san                                                                             57.7563   CURRENT
+#36         181641  Tokidoki Bosotto Rossiya-go de Dereru Tonari no Alya-san Season 2                                     56.6536   PLANNING
+#37         129195  My Friend's Little Sister Has It In for Me!                                                           56.6314   PLANNING
+#38          20872  Plastic Memories                                                                                      55.3653   PLANNING
+#39         141208  TONIKAWA: Over The Moon For You Season 2                                                              54.24     COMPLETED
+#40         135806  Uncle from Another World                                                                              52.9558   PLANNING
+#41         130003  BOCCHI THE ROCK!                                                                                      52.5363   PLANNING
+#42         101921  Kaguya-sama: Love is War                                                                              52.306    DROPPED
+#43          16353  Love Lab                                                                                              52.1499   PLANNING
+#44         180794  Cultural Exchange with a Game Centre Girl                                                             51.7896   PLANNING
+#45         158559  2.5 Dimensional Seduction                                                                             51.5923   PLANNING
+#46         185211  Yowayowa Sensei                                                                                       51.3563   COMPLETED
+#47         107067  Science Fell in Love, So I Tried to Prove It                                                          51.0443   COMPLETED
+#48          21457  This Art Club Has a Problem!                                                                          50.3887   PLANNING
+#49         175977  My Deer Friend Nokotan                                                                                50.3786   PLANNING
+#50         169102  BEAT & MOTION                                                                                         50.2901   PLANNING
+#51         143200  Summer Pockets                                                                                        49.5898   PLANNING
+#52         160488  VTuber Legend: How I Went Viral after Forgetting to Turn Off My Stream                                48.9557   DROPPED
+#53         174802  The Shiunji Family Children                                                                           48.8781   PLANNING
+#54         169583  Oh Boy, Was I Wrong About Her                                                                         47.8344   CURRENT
+#55         186744  Even a Replica Can Fall in Love                                                                       47.3889   PLANNING
+#56         169927  Studio Apartment, Good Lighting, Angel Included                                                       47.0926   COMPLETED
+#57         112443  Bottom-Tier Character Tomozaki                                                                        46.5443   PLANNING
+#58         187869  Botan Kamiina Fully Blossoms When Drunk                                                               45.9248   DROPPED
+#59          21322  Mysteria Friends                                                                                      45.8124   PLANNING
+#60         104325  Why the hell are you here, Teacher!?                                                                  45.3399   DROPPED
+#61          20602  Amagi Brilliant Park                                                                                  43.9351   COMPLETED
+#62         177509  Kakushite! Makina-san!                                                                                43.8399   PLANNING
+#63         187942  Tune In to the Midnight Heart                                                                         43.8067   PLANNING
+#64         127371  TONIKAWA: Over The Moon For You ~SNS~                                                                 43.7854   COMPLETED
+#65         179992  Mechanical Marie                                                                                      43.4169   PLANNING
+#66         192800  Heroine? Saint? No, I’m an All-Works Maid (And Proud of It)!                                          42.9096   PLANNING
+#67          20966  Yamada and the Seven Witches                                                                          42.8582   DROPPED
+#68         185939  Food for the Soul                                                                                     42.4399   PLANNING
+#69         141212  TONIKAWA: Over The Moon For You ~Uniform~                                                             42.3757   COMPLETED
+#70         194028  Wash It All Away                                                                                      42.3651   COMPLETED
+#71          98291  Tsuredure Children                                                                                    41.4265   PLANNING
+#72         125124  Science Fell in Love, So I Tried to Prove It r=1-sinθ                                                 41.2403   PLANNING
+#73          20529  The Kawai Complex Guide to Manors and Hostel Behavior                                                 40.8546   DROPPED
+#74          18095  No-Rin                                                                                                40.7846   CURRENT
+#75         202523  Marika's Love Meter Malfunction                                                                       39.6051   COMPLETED
+#76         180082  Chitose Is in the Ramune Bottle                                                                       39.0725   COMPLETED
+#77         112818  SUPER HXEROS                                                                                          38.098    PLANNING
+#78         166104  TONIKAWA: Over The Moon For You ~High School Days~                                                    38.0631   COMPLETED
+#79         201514  Rich Girl Caretaker: I'm Secretly the Caregiver of the Most Popular Girl in This Rich Kid School      36.3378   CURRENT
+#80         202269  Love Unseen Beneath the Clear Night Sky                                                               35.9565   CURRENT
+#81         100645  My Sweet Tyrant                                                                                       35.1828   PLANNING
+#82         187260  I Want to Love You Till Your Dying Day                                                                34.7871   PLANNING
+#83           8861  Yosuga no Sora: In Solitude Where We are Least Alone                                                  34.261    DROPPED
+#84         114302  Drug Store in Another World - The Slow Life of a Cheat Pharmacist                                     34.0655   PLANNING
+#85          11785  Nyaruko: Crawling with Love!                                                                          32.9479   PLANNING
+#86           7593  kiss×sis (TV)                                                                                         32.9335   PLANNING
+#87         190143  Agents of the Four Seasons: Dance of Spring                                                           32.0687   PLANNING
+#88         195518  The Villainess Is Adored by the Prince of the Neighbor Kingdom                                        31.9467   PLANNING
+#89         214044  Noa-senpai wa Tomodachi.                                                                              31.394    PLANNING
+#90         110270  Interspecies Reviewers                                                                                31.1329   DROPPED
+#91          21818  Aishen Qiaokeli-ING...                                                                                30.7894   DROPPED
+#92           9756  Puella Magi Madoka Magica                                                                             30.2946   DROPPED
+#93         195515  There was a Cute Girl in the Hero’s Party, so I Tried Confessing to Her                               29.0866   COMPLETED
+#94         107961  Hensuki: Are you willing to fall in love with a pervert, as long as she’s a cutie?                    29.0612   DROPPED
+#95          21077  Amagi Brilliant Park: No Time to Take It Easy!                                                        28.2013   COMPLETED
+#96         198374  A Misanthrope Teaches a Class for Demi-Humans                                                         27.9857   PLANNING
+#97           5042  Kiss x Sis                                                                                            26.8119   PLANNING
+#98          14199  OniAi                                                                                                 25.9727   PLANNING
+#99          21053  Amagi Brilliant Park: Wakuwaku Mini Theater Rakugaki Backstage                                        23.9579   COMPLETED
+#100        214215  Real mo Tama ni wa Uso wo Tsuku                                                                       20.9452   PLANNING
+#101        202381  Killed again, Mr. Detective.                                                                          20.899    COMPLETED
+#102        200578  Isshiki-san wa Koi wo Shiritai.                                                                       20.7656   PLANNING
+#103        105074  Magical Sempai                                                                                        19.5387   PLANNING
+#104        129190  The Genius Prince's Guide to Raising a Nation Out of Debt                                             19.4203   DROPPED
+#105        197715  The Villager of Level 999                                                                             15.5351   PLANNING
+#106        214368  Kusunoki-san wa Koukou Debut ni Shippaishiteiru                                                       14.4872   PLANNING
+#107        154643  Synduality Noir                                                                                       14.1421   DROPPED
+#108        170913  Adam's Sweet Agony                                                                                     8.39759  DROPPED
+#109        207327  To You in the Beyond                                                                                   4.73246  PLANNING
+************************************************************************************************************************
