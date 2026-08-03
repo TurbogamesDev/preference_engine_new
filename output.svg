@@ -21,7 +21,7 @@
 
   <rect class="bg" width="720" height="448" />
 
-  <text x="35" y="65" class="header">Anime Preference Predictor 20:31 03/08/26</text>
+  <text x="35" y="65" class="header">Anime Preference Predictor 20:45 03/08/26</text>
   <line x1="35" y1="85" x2="685" y2="85" class="line" />
 
   <g transform="translate(0, 0)">
