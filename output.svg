@@ -21,33 +21,33 @@
 
   <rect class="bg" width="720" height="448" />
 
-  <text x="35" y="65" class="header">Anime Preference Predictor 20:16 10/08/26</text>
+  <text x="35" y="65" class="header">Anime Preference Predictor 20:31 10/08/26</text>
   <line x1="35" y1="85" x2="685" y2="85" class="line" />
 
   <g transform="translate(0, 0)">
   <text x="35" y="140" class="rank">#1</text>
   <text x="90" y="140" class="title">The Invisible Man and His Soon-to-Be ...</text>
-  <text x="685" y="140" class="score" text-anchor="end">81.06%</text>
+  <text x="685" y="140" class="score" text-anchor="end">80.95%</text>
   <line x1="35" y1="160" x2="685" y2="160" class="line" />
 </g><g transform="translate(0, 65)">
   <text x="35" y="140" class="rank">#2</text>
   <text x="90" y="140" class="title">Komi Can’t Communicate</text>
-  <text x="685" y="140" class="score" text-anchor="end">69.28%</text>
+  <text x="685" y="140" class="score" text-anchor="end">69.13%</text>
   <line x1="35" y1="160" x2="685" y2="160" class="line" />
 </g><g transform="translate(0, 130)">
   <text x="35" y="140" class="rank">#3</text>
   <text x="90" y="140" class="title">Grandpa and Grandma Turn Young Again</text>
-  <text x="685" y="140" class="score" text-anchor="end">66.71%</text>
+  <text x="685" y="140" class="score" text-anchor="end">66.51%</text>
   <line x1="35" y1="160" x2="685" y2="160" class="line" />
 </g><g transform="translate(0, 195)">
   <text x="35" y="140" class="rank">#4</text>
   <text x="90" y="140" class="title">The Angel Next Door Spoils Me Rotten2</text>
-  <text x="685" y="140" class="score" text-anchor="end">62.40%</text>
+  <text x="685" y="140" class="score" text-anchor="end">62.18%</text>
   <line x1="35" y1="160" x2="685" y2="160" class="line" />
 </g><g transform="translate(0, 260)">
   <text x="35" y="140" class="rank">#5</text>
   <text x="90" y="140" class="title">Makeine: Too Many Losing Heroines!</text>
-  <text x="685" y="140" class="score" text-anchor="end">61.47%</text>
+  <text x="685" y="140" class="score" text-anchor="end">61.28%</text>
   <line x1="35" y1="160" x2="685" y2="160" class="line" />
 </g>
 </svg>
