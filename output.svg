@@ -21,13 +21,13 @@
 
   <rect class="bg" width="720" height="448" />
 
-  <text x="35" y="65" class="header">Anime Preference Predictor 20:01 16/08/26</text>
+  <text x="35" y="65" class="header">Anime Preference Predictor 20:15 16/08/26</text>
   <line x1="35" y1="85" x2="685" y2="85" class="line" />
 
   <g transform="translate(0, 0)">
   <text x="35" y="140" class="rank">#1</text>
   <text x="90" y="140" class="title">The Invisible Man and His Soon-to-Be ...</text>
-  <text x="685" y="140" class="score" text-anchor="end">80.45%</text>
+  <text x="685" y="140" class="score" text-anchor="end">80.35%</text>
   <line x1="35" y1="160" x2="685" y2="160" class="line" />
 </g><g transform="translate(0, 65)">
   <text x="35" y="140" class="rank">#2</text>
